@@ -5,12 +5,15 @@ import { Entity as EntityDecorator, Column, PrimaryGeneratedColumn, Timestamp, M
 import { BaseEntity } from './base.entity';
 
 @EntityDecorator()
-export class EntityAccess extends BaseEntity {
+export class RecordAccess extends BaseEntity {
     @Column()
     name: string;
 
     @ManyToOne(() => Entity)
     entity: Entity
+
+    @Column()
+    domain: string
 
     @Column()
     canCreate: boolean;
@@ -24,7 +27,7 @@ export class EntityAccess extends BaseEntity {
     @Column()
     canDelete: boolean;
 
-    @ManyToMany(() => Group, (group: Group) => group.entityaccess)
+    @ManyToMany(() => Group, (group: Group) => group.recordaccess)
     @JoinTable()
     groups: Group[];
 }

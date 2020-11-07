@@ -1,3 +1,4 @@
+import { RecordAccess } from './recordaccess.entity';
 import { View } from './view.entity';
 import { Menu } from './menu.entity';
 import { User } from './user.entity';
@@ -20,4 +21,7 @@ export class Group extends BaseEntity {
 
     @ManyToMany(() => EntityAccess, (entityaccess: EntityAccess) => entityaccess.groups)
     entityaccess: EntityAccess[];
+
+    @ManyToMany(() => RecordAccess, (recordaccess: RecordAccess) => recordaccess.groups)
+    recordaccess: RecordAccess[];
 }

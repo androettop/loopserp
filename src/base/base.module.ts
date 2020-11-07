@@ -1,3 +1,5 @@
+import { RecordAccess } from './entities/recordaccess.entity';
+import { Entity } from './entities/entity.entity';
 import { View } from './entities/view.entity';
 import { Menu } from './entities/menu.entity';
 import { Group } from './entities/group.entity';
@@ -18,7 +20,7 @@ import { EntityAccess } from './entities/entityaccess.entity';
         username: 'tad',
         password: 'tad',
         database: 'loopserp',
-        entities: [User, Company, Group, Menu, View,EntityAccess],
+        entities: [User, Company, Group, Menu, View, EntityAccess, Entity, RecordAccess],
         autoLoadEntities: true,
         synchronize: true,
     })]

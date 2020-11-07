@@ -1,16 +1,16 @@
 import { User } from './user.entity';
-import { Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { BeforeInsert, Column, CreateDateColumn, ManyToOne, ObjectID, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-export class BaseEntity {
+export abstract class BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({ default: true })
     active: boolean;
 
-    @Column({ default: new Date() })
+    @CreateDateColumn()
     createdAt: Date;
 
-    @Column({ default: new Date() })
+    @UpdateDateColumn() 
     updatedAt: Date;
 }
